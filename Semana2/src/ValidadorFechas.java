@@ -5,7 +5,9 @@ bisiestos. */
 
 public class ValidadorFechas {
     public static void main(String[] args) {
-        int dia = 29;
+
+        //aca las entradas para cambiar y evualar la fecha
+        int dia = 3;
         int mes = 2;
         int anio = 2024;
 
