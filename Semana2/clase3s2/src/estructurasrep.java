@@ -27,6 +27,7 @@ public class estructurasrep {
                 cantidad = scanner.nextInt();
             }
             cantidades[contadorProductos] = cantidad;
+
             double precio = -1.0;
             // Ciclo while para validar el precio
             while (precio < 0.0) {
@@ -44,7 +45,24 @@ public class estructurasrep {
 
             // El ciclo tambien se detiene si se alcanza el limite de los arreglos por seguridad
         } while (opcion != 0 && contadorProductos < capacidadMaxima);
+
+
+        // Fase de calculo y resumen
+        double valorAcumuladoTotal = 0;
+        System.out.println("\nResumen de Inventario");
+
+        // Ciclo for para recorrer los arreglos paralelos usando el contador de productos ingresados
+        for (int i = 0; i < contadorProductos; i++) {
+            double valorProducto = cantidades[i] * precios[i];
+            valorAcumuladoTotal += valorProducto;
+
+            System.out.println("Producto: " + nombres[i] +
+                    " | Cantidad: " + cantidades[i] +
+                    " | Precio Unitario: $" + precios[i] +
+                    " | Valor Total: $" + valorProducto);
+        }
+
+        System.out.println("Valor Total Acumulado del Inventario: $" + valorAcumuladoTotal);
+        scanner.close();
     }
 }
-
-
