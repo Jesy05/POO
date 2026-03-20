@@ -27,5 +27,24 @@ public class estructurasrep {
                 cantidad = scanner.nextInt();
             }
             cantidades[contadorProductos] = cantidad;
+            double precio = -1.0;
+            // Ciclo while para validar el precio
+            while (precio < 0.0) {
+                System.out.print("Ingrese el precio unitario (0 o mayor): ");
+                precio = scanner.nextDouble();
+            }
+            precios[contadorProductos] = precio;
 
+            // Aumentamos el contador para pasar al siguiente espacio disponible en los arreglos
+            contadorProductos++;
+
+            System.out.print("Desea ingresar otro producto? (1 = Si, 0 = No): ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            // El ciclo tambien se detiene si se alcanza el limite de los arreglos por seguridad
+        } while (opcion != 0 && contadorProductos < capacidadMaxima);
+    }
 }
+
+
