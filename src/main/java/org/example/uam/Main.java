@@ -29,7 +29,6 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    // Captura de datos mediante ventanas emergentes
                     nombre = JOptionPane.showInputDialog(null, "Nombre: ");
                     apellidos = JOptionPane.showInputDialog(null, "Apellidos: ");
                     email = JOptionPane.showInputDialog(null, "Email: ");
@@ -40,8 +39,6 @@ public class Main {
                         JOptionPane.showMessageDialog(null, "Salario inválido, se guardará como 0.0");
                         salario = 0.0;
                     }
-
-                    // Se envía la información al método que guarda el registro
                     registros.agregarPersona(nombre, apellidos, email, salario);
                     JOptionPane.showMessageDialog(null, "Persona agregada con éxito!");
                     break;
